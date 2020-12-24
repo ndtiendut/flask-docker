@@ -42,7 +42,7 @@ pipeline {
     //   }
     // }
     stage("build") {
-      agent { node {label 'master'}
+      agent { node {label 'master'},
         docker {
               args '-u 0:0'
             }
