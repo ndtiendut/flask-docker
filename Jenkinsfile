@@ -42,10 +42,8 @@ pipeline {
     //   }
     // }
     stage("build") {
-      agent { node {label 'master'},
-        docker {
-              args '-u 0:0'
-            }
+      agent { node: {label 'master'},
+              docker: { args '-u 0:0'}
       }
       environment {
         DOCKER_TAG="${GIT_BRANCH.tokenize('/').pop()}-${BUILD_NUMBER}-${GIT_COMMIT.substring(0,7)}"
