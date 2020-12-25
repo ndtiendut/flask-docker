@@ -10,3 +10,4 @@ def test_dummy2():
     assert 10 + 5 == 16 - 1
     assert 10 + 10 == 20
     assert 10 + 20 == 30
+    assert 10 + 20 == 30
