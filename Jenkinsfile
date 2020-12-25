@@ -1,4 +1,4 @@
-//jenkins
+//jenkins test
 pipeline {
 
   agent none
