@@ -1,3 +1,4 @@
+//jenkins
 pipeline {
 
   agent none
