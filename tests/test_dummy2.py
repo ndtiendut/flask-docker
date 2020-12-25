@@ -6,3 +6,5 @@ def test_dummy2():
     assert 2 == 2
     assert 3 == 3
     assert 4 == 4
+    assert 10 + 1 == 11
+    assert 10 + 5 == 16 - 1
