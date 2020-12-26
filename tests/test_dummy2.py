@@ -12,6 +12,7 @@ def test_dummy2():
     assert 6 == 6
     assert 6 == 9
     assert 6 == 99
+    assert 6 == 99
 
 
     
