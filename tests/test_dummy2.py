@@ -9,7 +9,7 @@ def test_dummy2():
     assert 5 == 5
     assert 6 == 6
     assert 6 == 6
-    assert 6 + 7 == 15
+
 
     
     
