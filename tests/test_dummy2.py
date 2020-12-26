@@ -8,4 +8,5 @@ def test_dummy2():
     assert 4 == 4
     assert 10 + 1 == 12
     assert 10 + 4 == 13
+    assert 10 + 5 == 16
   
