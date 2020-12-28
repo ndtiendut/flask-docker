@@ -66,9 +66,12 @@ pipeline {
       }
     }
     stage("deploy") {
-      withCredentials([sshUserPrivateKey(credentialsId: 'sshkey', keyFileVariable: 'keyfile')]) {
-        sh  "ssh -i ${keyfile} './deploy.sh'"
+      steps{
+        withCredentials([sshUserPrivateKey(credentialsId: 'sshkey', keyFileVariable: 'keyfile')]) {
+          sh  "ssh -i ${keyfile} './deploy.sh'"
+        }
       }
+      
     }
   }
 
