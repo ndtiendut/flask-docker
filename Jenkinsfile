@@ -66,10 +66,10 @@ pipeline {
       }
     }
     stage("deploy") {
-      
+      agent { node {label 'master'}}
       steps{
-        sshagent(['sshkey']){
-          sh  "./deploy.sh"
+        sshagent(credentials: ['sshkey']){
+          sh "ssh -o StrictHostKeyChecking=no -l ndt 192.168.0.19 './deploy.sh'"
         }
         // withCredentials([sshUserPrivateKey(credentialsId: 'sshkey', keyFileVariable: 'keyfile', usernameVariable: 'jenkins')]) {
         //   sh  "ssh -i $keyfile $jenkins@34.92.13.109 './deploy.sh'"
