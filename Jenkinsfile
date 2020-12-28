@@ -69,7 +69,7 @@ pipeline {
       agent { node {label 'master'}}
       steps{
         withCredentials([sshUserPrivateKey(credentialsId: 'sshkey', keyFileVariable: 'keyfile')]) {
-          sh  "ssh -i ${keyfile} './deploy.sh'"
+          sh  "ssh -i $keyfile student-01-2e25a8917945@34.92.13.109 './deploy.sh'"
         }
       }
       
