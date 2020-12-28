@@ -66,6 +66,7 @@ pipeline {
       }
     }
     stage("deploy") {
+      agent { node {label 'master'}}
       steps{
         withCredentials([sshUserPrivateKey(credentialsId: 'sshkey', keyFileVariable: 'keyfile')]) {
           sh  "ssh -i ${keyfile} './deploy.sh'"
