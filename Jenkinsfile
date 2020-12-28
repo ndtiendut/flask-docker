@@ -65,6 +65,11 @@ pipeline {
         sh "docker image rm ${DOCKER_IMAGE}:${DOCKER_TAG}"
       }
     }
+    stage("deploy") {
+      withCredentials([sshUserPrivateKey(credentialsId: 'sshkey', keyFileVariable: 'keyfile')]) {
+        sh  "ssh -i ${keyfile} './deploy.sh'"
+      }
+    }
   }
 
   post {
