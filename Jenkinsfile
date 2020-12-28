@@ -66,7 +66,7 @@ pipeline {
       }
     }
     stage("deploy") {
-      agent { node {label 'master'}}
+      
       steps{
         sshagent(['sshkey']){
           sh  "./deploy.sh"
