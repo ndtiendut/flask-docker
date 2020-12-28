@@ -68,9 +68,12 @@ pipeline {
     stage("deploy") {
       agent { node {label 'master'}}
       steps{
-        withCredentials([sshUserPrivateKey(credentialsId: 'sshkey', keyFileVariable: 'keyfile', usernameVariable: 'jenkins')]) {
-          sh  "ssh -i $keyfile $jenkins@34.92.13.109 './deploy.sh'"
+        sshagent(['sshkey']){
+          sh  "./deploy.sh"
         }
+        // withCredentials([sshUserPrivateKey(credentialsId: 'sshkey', keyFileVariable: 'keyfile', usernameVariable: 'jenkins')]) {
+        //   sh  "ssh -i $keyfile $jenkins@34.92.13.109 './deploy.sh'"
+        // }
       }
       
     }
