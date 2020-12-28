@@ -10,6 +10,7 @@ def test_dummy2():
     assert 6 == 6
     assert 6 == 6
     assert 6 == 6
+    assert 6 == 6
 
 
     
